@@ -6,7 +6,7 @@ class Api::V1::MessagesController < ApplicationController
     @messages = Message.all
     @random_message = @messages.order('RANDOM()').first
 
-    render json: @random_messages
+    render json: @random_message
   end
 
   # GET /messages/1
