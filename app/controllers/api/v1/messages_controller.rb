@@ -4,8 +4,9 @@ class Api::V1::MessagesController < ApplicationController
   # GET /messages
   def index
     @messages = Message.all
+    @random_message = @messages.order('RANDOM()').first
 
-    render json: @messages
+    render json: @random_messages
   end
 
   # GET /messages/1
